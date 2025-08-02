@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Registration</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Registration & Login Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Create Your Account</h2>
-    <form id="registrationForm" novalidate>
-      <div class="form-group">
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name" autocomplete="name" />
-        <span class="error" id="fullnameError"></span>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="example@mail.com" autocomplete="email" />
-        <span class="error" id="emailError"></span>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="10-digit number" autocomplete="tel" />
-        <span class="error" id="phoneError"></span>
-      </div>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required autocomplete="username" />
-        <span class="error" id="usernameError"></span>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required autocomplete="new-password" />
-        <div id="strengthMessage"></div>
-        <span class="error" id="passwordError"></span>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" />
-        <span class="error" id="confirmPasswordError"></span>
-      </div>
-      <button type="submit" class="submit-btn">Register</button>
+
+  
+    <div class="hero">
+    <div class="form-box">
+    <div class="button-box">
+    <div id="btn"></div>
+        <button type="button" class="toggle-btn active" id="registerTab">Register</button>
+        <button type="button" class="toggle-btn" id="loginTab">Log in</button>
+    </div>
+      
+    <form id="register" class="input-group" autocomplete="on" name="register-sheet">
+        <input type="text" id="register_userid" name="userid" class="input-field" placeholder="User ID" required autocomplete="username">
+        <span id="register_errorname" class="error"></span>
+        <input type="tel" id="number" name="number" class="input-field" placeholder="Mobile number" required pattern="[0-9]{10}" autocomplete="tel">
+        <span id="errornumber" class="error"></span>
+        <input type="email" id="email" name="email" class="input-field" placeholder="Email ID" required autocomplete="email">
+        <span id="erroremail" class="error"></span>
+        <input type="password" id="register_password" name="password" class="input-field" placeholder="Enter Password" required autocomplete="new-password">
+        <span id="errorpassword" class="error"></span>
+        <div id="passwordStrength"></div>
+      <label>
+        <input type="checkbox" class="check-box" required>
+        <span class="span2">I agree to the terms and conditions</span>
+      </label>
+        <button type="submit" class="submit-btn">Register</button>
     </form>
-    <div id="result"></div>
-  </div>
+      
+
+
+    <form id="login" class="input-group" autocomplete="on" name="login-sheet" style="display:none;">
+        <input type="text" id="login_userid" name="userid" class="input-field" placeholder="User ID" required autocomplete="username">
+        <span id="login_errorname" class="error"></span>
+        <input type="password" id="login_password" name="password" class="input-field" placeholder="Enter Password" required autocomplete="current-password">
+        <span id="login_errorpassword" class="error"></span>
+        <label><input type="checkbox" class="check-box"> Remember Password</label>
+        <button type="submit" class="submit-btn">Log in</button>
+    </form>
+    </div>
+    </div>
+
+
   <script src="script.js"></script>
+
 </body>
 </html>
